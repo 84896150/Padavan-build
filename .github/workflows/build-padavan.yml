@@ -1,10 +1,18 @@
-name: Build Image and Publish to Dockerhub & GPR
+name: Build Padavan
 
-on:
-  push:
-    branches: [ test-build ]
+on: 
   release:
-    types: [ created ]
+    types: [published]
+  push:
+    tags:
+    - 'v*'
+  #  branches: 
+  #    - master
+#  schedule:
+#    - cron: 0 8 * * 5
+  watch:
+    types: [started]
+
 
 jobs:
 
